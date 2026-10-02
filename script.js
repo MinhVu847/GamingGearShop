@@ -68,3 +68,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Bắt đầu chạy slide ngay khi tải trang
   startAutoSlide();
 });
+
+// sl click them gio hang
+document.addEventListener('DOMContentLoaded', () => {
+  // Lắng nghe sự kiện click trên toàn bộ document
+  document.addEventListener('click', (e) => {
+    // Kiểm tra nếu người dùng bấm vào nút ".btn-quick-add"
+    const quickAddBtn = e.target.closest('.btn-quick-add');
+    
+    if (quickAddBtn) {
+      e.preventDefault();
+      e.stopPropagation(); // Tránh bị nhảy link sản phẩm
+
+      // Lấy thông tin từ thuộc tính data-*
+      const productId = quickAddBtn.dataset.id;
+      const productName = quickAddBtn.dataset.name;
+      const productPrice = Number(quickAddBtn.dataset.price);
+
+      // In thông tin sản phẩm đã chọn ra console
+      console.log('--- ĐÃ CHỌN NHANH SẢN PHẨM ---');
+      console.log(`Mã SP: ${productId}`);
+      console.log(`Tên SP: ${productName}`);
+      console.log(`Giá: ${productPrice.toLocaleString('vi-VN')} VNĐ`);
+
+      // Thông báo tạm thời (Sau này thay bằng logic thêm vào giỏ hàng)
+      alert(`Đã chọn nhanh: ${productName}\nGiá: ${productPrice.toLocaleString('vi-VN')}đ`);
+    }
+  });
+});

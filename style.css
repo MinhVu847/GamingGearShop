@@ -919,3 +919,63 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* ==================== NEW ARRIVALS SECTION ==================== */
+.new-arrivals-section {
+  padding: 20px 0 60px 0;
+}
+
+/* Nút + Chọn Nhanh trên ảnh sản phẩm */
+/* Khung chứa ảnh sản phẩm */
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  overflow: hidden; /* Giữ nút nằm gọn bên trong khung ảnh */
+}
+
+/* Nút "+ Chọn nhanh" - Mặc định ẩn và trượt nhẹ từ dưới lên */
+.btn-quick-add {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: #2563eb; /* Màu xanh dương */
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  
+  /* Hiệu ứng Ẩn & Trượt */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+/* Khi hover vào THẺ/ẢNH SẢN PHẨM -> Hiện nút Chọn nhanh */
+.product-card:hover .btn-quick-add {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hiệu ứng khi rê chuột trực tiếp vào nút */
+.btn-quick-add:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+}
+
+/* Hiệu ứng khi nhấn nút */
+.btn-quick-add:active {
+  transform: translateY(0) scale(0.96);
+}
