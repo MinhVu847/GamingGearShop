@@ -27,7 +27,7 @@ body {
 /* Header Component */
 /* ==================== HEADER COMPONENT ==================== */
 .header {
-  position: fixed;
+  position: absolute;
   top: 31px;
   left: 0;
   width: 100%;
@@ -178,9 +178,6 @@ body {
 
 /* ==================== DROPDOWN & MEGA MENU BASE ==================== */
 /* Đảm bảo menu con mở ra ăn theo chiều rộng toàn màn hình */
-.header {
-  position: absolute;
-}
 
 .nav-links > li {
   position: relative;
