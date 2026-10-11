@@ -96,3 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// danh gia section
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.testimonials-slider-wrapper');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (wrapper && prevBtn && nextBtn) {
+    const scrollAmount = 334; // Chiều rộng thẻ (310px) + khoảng cách gap (24px)
+
+    nextBtn.addEventListener('click', () => {
+      wrapper.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      wrapper.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
