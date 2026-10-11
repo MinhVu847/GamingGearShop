@@ -1499,11 +1499,362 @@ body {
 .brand-item:hover {
   background: #ffffff;
   border-color: #cbd5e1;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
 }
 
 .brand-item:hover img {
   filter: grayscale(0%) contrast(100%); /* Trở về màu thật */
   opacity: 1; /* Sáng rõ hoàn toàn */
+}
+
+/* Phần chứng nhận nối tiếp ngay dưới lưới logo */
+.brands-trust-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Judge.me block */
+.judge-me-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.jm-stars {
+  color: #10b981; /* Màu sao đánh giá */
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.jm-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.jm-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.jm-sub-verify {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.jm-highlight {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.jm-tag-box {
+  font-size: 9px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* Đường kẻ dọc */
+.brands-divider {
+  width: 1px;
+  height: 35px;
+  background-color: #cbd5e1;
+}
+
+/* Danh sách huy hiệu nhỏ bên phải */
+.brands-badges-list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.badge-thumb {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.badge-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge-thumb:hover {
+  opacity: 1;
+  
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .brand-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-trust-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .brands-divider {
+    display: none;
+  }
+}
+
+/* ==================== FOOTER SECTION ==================== */
+.main-footer {
+  background-color: #070d1d; /* Màu nền tối đặc trưng */
+  color: #94a3b8;
+  padding: 35px 0 30px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Phần nhận tin khuyến mãi */
+.footer-newsletter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.newsletter-info h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.newsletter-info p {
+  color: #94a3b8;
+  font-size: 13.5px;
+}
+
+.newsletter-form {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+}
+
+.newsletter-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.newsletter-input:focus {
+  border-color: #2563eb;
+}
+
+.newsletter-input::placeholder {
+  color: #64748b;
+}
+
+.newsletter-btn {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  bottom: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Lưới footer 4 cột */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1.3fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-heading {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-text {
+  margin-bottom: 10px;
+  color: #94a3b8;
+}
+
+.footer-text a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-text a:hover {
+  color: #3b82f6;
+}
+
+.footer-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer-check-list li {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+.footer-sub-links {
+  margin-top: 15px;
+}
+
+.footer-sub-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-sub-links a:hover {
+  text-decoration: underline;
+}
+
+/* Danh sách link các cột */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 10px;
+}
+
+.footer-links-list a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+  color: #ffffff;
+}
+
+/* Hàng mạng xã hội và huy hiệu Bộ Công Thương */
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.footer-bct-badge {
+  width: 140px;
+  opacity: 0.85;
+}
+
+.footer-bct-badge img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Copyright */
+.footer-copyright {
+  padding-top: 15px;
+  text-align: left;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+/* Responsive cho điện thoại / máy tính bảng */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-newsletter-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
