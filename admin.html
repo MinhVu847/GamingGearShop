@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Quản Trị Hệ Thống - Phong Cách Xanh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- ================= TOP NAVBAR ================= -->
+  <header class="admin-navbar">
+    <div class="admin-nav-brand">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        <span>Phong Cách Xanh</span>
+      </a>
+      <span class="admin-tag">ADMIN PORTAL</span>
+    </div>
+
+    <div class="admin-nav-actions">
+      <div class="admin-user-profile">
+        <div class="admin-avatar">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <span id="adminDisplayName">Quản Trị Viên</span>
+      </div>
+
+      <a href="index.html" class="btn-nav-shop" title="Xem cửa hàng bán lẻ">
+        <i class="fa-solid fa-store"></i> Xem Shop
+      </a>
+
+      <button type="button" class="btn-admin-logout" id="btnAdminLogout">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= LAYOUT VỚI SIDEBAR & CONTENT ================= -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar điều hướng quản trị -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-title">Menu Quản Trị</div>
+      
+      <a href="#" class="sidebar-link active">
+        <i class="fa-solid fa-chart-pie"></i> Tổng quan
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="fa-solid fa-boxes-stacked"></i> Quản lý đơn hàng
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="fa-solid fa-computer-mouse"></i> Quản lý sản phẩm
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="fa-solid fa-users"></i> Quản lý người dùng
+      </a>
+      <a href="#" class="sidebar-link">
+        <i class="fa-solid fa-sliders"></i> Cài đặt hệ thống
+      </a>
+    </aside>
+
+    <!-- Khu vực nội dung chính -->
+    <main class="admin-main">
+      
+      <!-- Banner chào mừng -->
+      <section class="admin-welcome-banner">
+        <div class="admin-welcome-info">
+          <h1>Xin chào, <span id="adminGreetingName">Quản Trị Viên</span>! 👋</h1>
+          <p>Chào mừng bạn đến với khu vực Quản trị GamingGearShop. Khung layout quản lý đã sẵn sàng.</p>
+        </div>
+        <div class="badge-dev-status">
+          <i class="fa-solid fa-circle-check"></i> Hệ Thống Đang Hoạt Động
+        </div>
+      </section>
+
+      <!-- Các thẻ số liệu tổng quan (Placeholder) -->
+      <section class="admin-stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon stat-blue">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Tổng đơn hàng</span>
+            <span class="stat-number" id="adminStatOrders">--</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-green">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Doanh thu ước tính</span>
+            <span class="stat-number" id="adminStatRevenue">--</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-orange">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Sản phẩm trên web</span>
+            <span class="stat-number">24 món</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon stat-purple">
+            <i class="fa-solid fa-user-group"></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-label">Tài khoản hệ thống</span>
+            <span class="stat-number" id="adminStatUsers">--</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vùng placeholder chờ bạn phát triển chức năng sau -->
+      <section class="admin-placeholder-box">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Khu Vực Quản Lý Hệ Thống</h3>
+        <p>Chào mừng bạn đến với trang quản trị cửa hàng Phong Cách Xanh. Hệ thống quản lý bán hàng và phân quyền đang hoạt động ổn định.</p>
+        <a href="index.html" class="btn-nav-shop" style="display: inline-flex;">
+          <i class="fa-solid fa-arrow-left"></i> Quay lại trang bán hàng Shop
+        </a>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Script xác thực -->
+  <script src="js/auth.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Kiểm tra Route Guard: Phải là Admin mới được ở lại trang này
+      const currentUser = window.PCX_AUTH.getCurrentUser();
+
+      if (!currentUser || currentUser.role !== 'admin') {
+        alert('Cảnh báo: Bạn không có quyền truy cập khu vực Quản trị! Vui lòng đăng nhập với tài khoản Admin.');
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // 2. Hiển thị tên Admin
+      document.getElementById('adminDisplayName').textContent = currentUser.name;
+      document.getElementById('adminGreetingName').textContent = currentUser.name;
+
+      // 3. Đọc dữ liệu thống kê từ localStorage để hiển thị số liệu thật của web
+      try {
+        const orders = JSON.parse(localStorage.getItem('pcx_orders') || '[]');
+        const users = JSON.parse(localStorage.getItem('pcx_users') || '[]');
+        const totalRevenue = orders.reduce((sum, ord) => sum + (ord.total || 0), 0);
+
+        document.getElementById('adminStatOrders').textContent = `${orders.length} đơn`;
+        document.getElementById('adminStatRevenue').textContent = `${totalRevenue.toLocaleString('vi-VN')}₫`;
+        document.getElementById('adminStatUsers').textContent = `${users.length} tài khoản`;
+      } catch (e) {}
+
+      // 4. Xử lý nút Đăng xuất
+      document.getElementById('btnAdminLogout').addEventListener('click', () => {
+        window.PCX_AUTH.logout();
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</body>
+</html>

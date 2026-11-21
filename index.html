@@ -6,6 +6,7 @@
   <title>Phong Cách Xanh - WorldGear</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/auth.css">
 </head>
 <body> 
 
@@ -151,7 +152,7 @@
 
       <li><a href="#">Góc Game Thủ</a></li>
       <li><a href="#">Sản Phẩm 2N</a></li>
-      <li><a href="#">Tích Điểm EXP</a></li>
+      <li><a href="#">Tin Tức</a></li>
       <li><a href="#">Liên Hệ</a></li>
     </ul>
   </nav>
@@ -161,17 +162,18 @@
       <input type="text" placeholder="Tìm chuột, bàn phím...">
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
-    <div class="header-icon">
+    <div class="header-icon" id="userAccountBtn" title="Tài khoản">
       <i class="fa-regular fa-user"></i>
     </div>
-    <div class="header-icon">
+    <div class="header-icon cart-icon-btn" id="cartIconBtn" title="Xem giỏ hàng">
       <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
     </div>
   </div>
 </header>
 
   <!-- Hero Section -->
-   <script src="script.js"></script>
+
   <section class="hero">
   <!-- Wrapper chứa các Slide -->
   <div class="slides-container">
@@ -1026,7 +1028,7 @@
         <ul class="footer-links-list">
           <li><a href="#">Trả góp 0% qua thẻ</a></li>
           <li><a href="#">Mua trước, trả sau</a></li>
-          <li><a href="#">Tích điểm EXP & hạng thành viên</a></li>
+          <li><a href="#">Hạng thành viên VIP</a></li>
           <li><a href="#">Chương trình Affiliate</a></li>
         </ul>
       </div>
@@ -1057,5 +1059,9 @@
 </footer>
 
 
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="js/order-mock.js"></script>
+  <script src="js/auth.js"></script>
 </body>
 </html>
